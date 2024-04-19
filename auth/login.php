@@ -36,7 +36,7 @@ function handle_login_post(): void
     }
 }
 
-
+handle_login_post();
 ?>
 
 <?php
