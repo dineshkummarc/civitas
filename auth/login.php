@@ -49,11 +49,11 @@ if (isset($err)) {
 <form method="POST">
     <label>
         Username
-        <input type="text" name="username">
+        <input type="text" name="username" maxlength="50" required>
     </label>
     <label>
         Password
-        <input type="password" name="password">
+        <input type="password" name="password" maxlength="71" required>
     </label>
     <button>Log in</button>
 </form>

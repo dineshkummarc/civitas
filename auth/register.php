@@ -21,8 +21,8 @@ function handle_register_post(): void
             return;
         }
 
-        if (strlen($password) > 72) {
-            $err = "Your password must be 72 characters or shorter.";
+        if (strlen($password) > 71) {
+            $err = "Your password must be 71 characters or shorter.";
             return;
         }
 
@@ -62,11 +62,11 @@ if (isset($err)) {
 <form method="POST">
     <label>
         Username
-        <input type="text" name="username" maxlength="50">
+        <input type="text" name="username" maxlength="50" required>
     </label>
     <label>
         Password
-        <input type="password" name="password" maxlength="72">
+        <input type="password" name="password" maxlength="71" required>
     </label>
     <button>Register</button>
 </form>
