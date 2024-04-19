@@ -41,8 +41,17 @@ include "../layout/top.php";
     </p>
 </header>
 
+<form action="/topics/reply.php" method="POST">
+    <input type="hidden" name="topic_id" value="<?= $topic["id"] ?>">
+    <label>
+        Content
+        <textarea name="content" cols="30" rows="10" required></textarea>
+    </label>
+    <button>Submit</button>
+</form>
+
 <?php foreach($replies as $reply): ?>
-    <article>
+    <article id="reply-<?= $reply["id"] ?>">
         <header>
             <strong>@<?= htmlspecialchars($reply["username"]) ?></strong>
             <?= htmlspecialchars($reply["created_at"]) ?>
