@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `topics` (
     `creator_id` INT NOT NULL,
     `title` VARCHAR(500) NOT NULL DEFAULT '',
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `last_reply` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY(`id`),
     FOREIGN KEY(`creator_id`) REFERENCES `users`(`id`)
@@ -52,7 +53,16 @@ CREATE TABLE IF NOT EXISTS `replies` (
     PRIMARY KEY(`id`),
     FOREIGN KEY(`topic_id`) REFERENCES `topics`(`id`),
     FOREIGN KEY(`creator_id`) REFERENCES `users`(`id`)
-);";
+);
+
+CREATE TRIGGER IF NOT EXISTS `update_last_reply`
+AFTER INSERT ON `replies`
+FOR EACH ROW
+BEGIN
+    UPDATE `topics`
+    SET `last_reply` = `NEW`.`created_at`
+    WHERE `id` = `NEW`.`topic_id`;
+END;";
 
 if ($conn->multi_query($schema)) {
     do {
