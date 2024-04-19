@@ -11,6 +11,11 @@ function handle_register_post(): void
         $username = $_POST["username"];
         $password = $_POST["password"];
 
+        if (empty($username) || empty($password)) {
+            $err = "There are missing fields.";
+            return;
+        }
+
         if (strlen($username) > 50) {
             $err = "Your username must be 50 characters or shorter.";
             return;
@@ -53,7 +58,7 @@ if (isset($err)) {
 }
 ?>
 
-<h1>Register</h1>
+<h2>Register</h2>
 <form method="POST">
     <label>
         Username
