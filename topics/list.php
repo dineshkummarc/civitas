@@ -11,14 +11,16 @@ $topics = $conn->execute_query($sql)->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <?php foreach($topics as $topic): ?>
-    <div>
-        <header>
-            <a href="/topics/view.php?id=<?= $topic["id"] ?>">
+    <div class="post-summary">
+        <header class="post-summary__header">
+            <a class="post-summary__link" href="/topics/view.php?id=<?= $topic["id"] ?>">
                 <?= htmlspecialchars($topic["title"]) ?>
             </a>
         </header>
-        By @<?= htmlspecialchars($topic["username"]) ?>
-        • Last reply: <?= htmlspecialchars($topic["last_reply"]) ?>
+        <div class="post-summary__data">
+            By @<?= htmlspecialchars($topic["username"]) ?>
+            • Last reply: <?= htmlspecialchars($topic["last_reply"]) ?>
+        </div>
     </div>
 <?php endforeach ?>
 

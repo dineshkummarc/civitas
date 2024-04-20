@@ -11,13 +11,13 @@ $config = include("../config.php");
     <title><?= $title ?> - <?= $config["forum_title"] ?></title>
 </head>
 <body>
-    <header>
-        <h1><?= $config["forum_title"] ?></h1>
-        <a href="/topics/list.php">Home</a>
+    <header class="page-header">
+        <h1 class="page-header__title"><?= $config["forum_title"] ?></h1>
+        <a class="page-header__link" href="/topics/list.php">Home</a>
         <?php if (isset($_SESSION["auth"]) && boolval($_SESSION["auth"])): ?>
-            <a href="/topics/create.php">Create a topic</a>
-            <a href="/auth/logout.php">Log out</a>
+            <a class="page-header__link" href="/topics/create.php">Create a topic</a>
+            <a class="page-header__link" href="/auth/logout.php">Log out</a>
         <?php else: ?>
-            <a href="/auth/login.php">Log in</a>
+            <a class="page-header__link" href="/auth/login.php">Log in</a>
         <?php endif ?>
     </header>

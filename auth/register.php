@@ -58,17 +58,17 @@ if (isset($err)) {
 }
 ?>
 
-<h2>Register</h2>
-<form method="POST">
-    <label>
+<h2 class="page-title">Register</h2>
+<form method="POST" class="form">
+    <label class="form__label">
         Username
-        <input type="text" name="username" maxlength="50" required>
+        <input type="text" name="username" maxlength="50" required class="form__input">
     </label>
-    <label>
+    <label class="form__label">
         Password
-        <input type="password" name="password" maxlength="71" required>
+        <input type="password" name="password" maxlength="71" required class="form__input">
     </label>
-    <button>Register</button>
+    <button class="button button--primary">Register</button>
 </form>
 
 <?php include "../layout/bottom.php" ?>

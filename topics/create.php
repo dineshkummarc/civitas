@@ -45,13 +45,13 @@ if (isset($err)) {
 }
 ?>
 
-<h2>Create a topic</h2>
-<form method="POST">
-    <label>
+<h2 class="page-title">Create a topic</h2>
+<form method="POST" class="form">
+    <label class="form__label">
         Title
+        <input type="text" maxlength="500" required name="title" class="form__input">
     </label>
-    <input type="text" maxlength="500" required name="title">
-    <button>Create</button>
+    <button class="button button--primary">Create</button>
 </form>
 
 <?php include("../layout/bottom.php") ?>

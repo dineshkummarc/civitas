@@ -31,9 +31,9 @@ include "../layout/top.php";
 
 ?>
 
-<header>
-    <h2><?= htmlspecialchars($topic["title"]) ?></h2>
-    <p>
+<header class="post-header">
+    <h2 class="post-header__title"><?= htmlspecialchars($topic["title"]) ?></h2>
+    <p class="post-header__info">
         Discussion started by
         <?= htmlspecialchars($topic["username"]) ?>
         at
@@ -41,18 +41,18 @@ include "../layout/top.php";
     </p>
 </header>
 
-<form action="/topics/reply.php" method="POST">
-    <input type="hidden" name="topic_id" value="<?= $topic["id"] ?>">
-    <label>
+<form action="/topics/reply.php" method="POST" class="form">
+    <input type="hidden" name="topic_id" value="<?= $topic["id"] ?>" class="form__input">
+    <label class="form--label">
         Content
-        <textarea name="content" cols="30" rows="10" required></textarea>
+        <textarea name="content" cols="30" rows="10" required class="form__input"></textarea>
     </label>
-    <button>Submit</button>
+    <button class="button button--primary">Submit</button>
 </form>
 
 <?php foreach($replies as $reply): ?>
-    <article id="reply-<?= $reply["id"] ?>">
-        <header>
+    <article class="reply" id="reply-<?= $reply["id"] ?>">
+        <header class="reply__header">
             <strong>@<?= htmlspecialchars($reply["username"]) ?></strong>
             <?= htmlspecialchars($reply["created_at"]) ?>
         </header>
