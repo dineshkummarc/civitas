@@ -14,6 +14,7 @@ $config = include("../config.php");
     <header>
         <h1><?= $config["forum_title"] ?></h1>
         <?php if (isset($_SESSION["auth"]) && boolval($_SESSION["auth"])): ?>
+            <a href="/topics/create.php">Create a topic</a>
             <a href="/auth/logout.php">Log out</a>
         <?php else: ?>
             <a href="/auth/login.php">Log in</a>

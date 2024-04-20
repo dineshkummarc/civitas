@@ -51,7 +51,7 @@ if (isset($err)) {
         Title
     </label>
     <input type="text" maxlength="500" required name="title">
-    <button>Submit</button>
+    <button>Create</button>
 </form>
 
 <?php include("../layout/bottom.php") ?>
