@@ -1,0 +1,21 @@
+.post-summary {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.post-summary__link {
+    all: unset;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.post-summary__link:hover {
+    text-decoration: underline;
+}
+
+.post-summary__details {
+    color: gray;
+    font-size: smaller;
+    margin-top: 5px;
+}

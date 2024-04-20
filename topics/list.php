@@ -17,7 +17,7 @@ $topics = $conn->execute_query($sql)->fetch_all(MYSQLI_ASSOC);
                 <?= htmlspecialchars($topic["title"]) ?>
             </a>
         </header>
-        <div class="post-summary__data">
+        <div class="post-summary__details">
             By @<?= htmlspecialchars($topic["username"]) ?>
             • Last reply: <?= htmlspecialchars($topic["last_reply"]) ?>
         </div>

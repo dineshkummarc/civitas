@@ -10,6 +10,7 @@ $config = include("../config.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/global.css">
     <link rel="stylesheet" href="/static/css/controls.css">
+    <link rel="stylesheet" href="/static/css/summary.css">
     <title><?= $title ?> - <?= $config["forum_title"] ?></title>
 </head>
 <body>
