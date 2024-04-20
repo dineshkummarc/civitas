@@ -26,7 +26,9 @@ ORDER BY `created_at`";
 
 $replies = $conn->execute_query($sql, [intval($id)])->fetch_all(MYSQLI_ASSOC);
 
-$title = "Topic \"{$topic["title"]}\" by {$topic["username"]}";
+$escaped_title = htmlspecialchars($topic["title"]);
+$escaped_username = htmlspecialchars($topic["username"]);
+$title = "Topic \"$escaped_title\" by $escaped_username";
 include "../layout/top.php";
 
 ?>
