@@ -41,14 +41,16 @@ include "../layout/top.php";
     </p>
 </header>
 
-<form action="/topics/reply.php" method="POST" class="form">
-    <input type="hidden" name="topic_id" value="<?= $topic["id"] ?>" class="form__input">
-    <label class="form__label">
-        Reply
-        <textarea name="content" cols="30" rows="10" required class="form__input"></textarea>
-    </label>
-    <button class="button button--primary">Submit</button>
-</form>
+<?php if (isset($_SESSION["auth"]) && boolval($_SESSION["auth"])): ?>
+    <form action="/topics/reply.php" method="POST" class="form">
+        <input type="hidden" name="topic_id" value="<?= $topic["id"] ?>" class="form__input">
+        <label class="form__label">
+            Reply
+            <textarea name="content" cols="30" rows="10" required class="form__input"></textarea>
+        </label>
+        <button class="button button--primary">Submit</button>
+    </form>
+<?php endif ?>
 
 <?php foreach($replies as $reply): ?>
     <article class="reply" id="reply-<?= $reply["id"] ?>">
