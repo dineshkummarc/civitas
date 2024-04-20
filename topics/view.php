@@ -43,7 +43,7 @@ include "../layout/top.php";
 
 <form action="/topics/reply.php" method="POST" class="form">
     <input type="hidden" name="topic_id" value="<?= $topic["id"] ?>" class="form__input">
-    <label class="form--label">
+    <label class="form__label">
         Content
         <textarea name="content" cols="30" rows="10" required class="form__input"></textarea>
     </label>
