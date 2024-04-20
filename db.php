@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `topics` (
     `last_reply` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY(`id`),
-    FOREIGN KEY(`creator_id`) REFERENCES `users`(`id`)
+    FOREIGN KEY(`creator_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS `replies` (
@@ -51,8 +51,8 @@ CREATE TABLE IF NOT EXISTS `replies` (
     `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     PRIMARY KEY(`id`),
-    FOREIGN KEY(`topic_id`) REFERENCES `topics`(`id`),
-    FOREIGN KEY(`creator_id`) REFERENCES `users`(`id`)
+    FOREIGN KEY(`topic_id`) REFERENCES `topics`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY(`creator_id`) REFERENCES `users`(`id`) ON DELETE CASCADE
 );
 
 CREATE TRIGGER IF NOT EXISTS `update_last_reply`
