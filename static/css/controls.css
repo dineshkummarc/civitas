@@ -1,0 +1,35 @@
+.form, .form__label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form__label {
+    font-size: small;
+}
+
+.form__input {
+    all: unset;
+    background: rgb(235, 235, 235);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: medium;
+}
+
+.button {
+    all: unset;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: small;
+    transition: 200ms;
+}
+
+.button--primary {
+    background: var(--primary-bg);
+    color: var(--primary-fg);
+}
+
+.button--primary:hover {
+    background: var(--primary-bg-darker);
+}
