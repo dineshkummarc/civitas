@@ -12,6 +12,7 @@ $config = include("../config.php");
     <link rel="stylesheet" href="/static/css/controls.css">
     <link rel="stylesheet" href="/static/css/summary.css">
     <link rel="stylesheet" href="/static/css/post_view.css">
+    <link rel="stylesheet" href="/static/css/header.css">
     <title><?= $title ?> - <?= $config["forum_title"] ?></title>
 </head>
 <body>
