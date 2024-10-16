@@ -3,7 +3,6 @@ Lightweight forum software written in PHP: build your own community-driven
 discussion platform.
 
 ## Screenshots
-
 ### Creating a topic
 ![Creating a topic](https://i.imgur.com/w3SDHwD.jpeg)
 
